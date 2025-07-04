@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Exame Clínico Neurológico em Ruminantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-step::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            bottom: -2.5rem;
+            width: 2px;
+            background-color: #00A3FF;
+            transform: translateX(-50%);
+        }
+        .flowchart-step:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- CONFIRMATION: NEITHER MERMAID JS NOR SVG WERE USED IN THIS DOCUMENT -->
+    
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#00A3FF] uppercase tracking-wide">Exame Neurológico em Ruminantes</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">Uma Abordagem para Diagnóstico e Localização de Lesões</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="introduction" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Por que a Avaliação Neurológica é Crucial?</h2>
+                <p class="max-w-3xl mx-auto text-gray-700 mb-6">Em ruminantes, os sinais neurológicos podem ser sutis e facilmente confundidos com outras condições. Um exame sistemático e detalhado não é apenas um procedimento, mas a principal ferramenta para localizar lesões com precisão, permitindo um diagnóstico diferencial assertivo e um plano terapêutico eficaz.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <div class="text-5xl font-black text-[#00A3FF]">🎯</div>
+                        <h3 class="text-xl font-bold mt-2">Localização Precisa</h3>
+                        <p class="text-gray-600 mt-1">Identifica a área afetada do sistema nervoso (cérebro, cerebelo, medula).</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-lg">
+                        <div class="text-5xl font-black text-[#FFC700]">🩺</div>
+                        <h3 class="text-xl font-bold mt-2">Diagnóstico Diferencial</h3>
+                        <p class="text-gray-600 mt-1">Ajuda a distinguir entre infecções, intoxicações e deficiências.</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <div class="text-5xl font-black text-[#FF6B00]">📈</div>
+                        <h3 class="text-xl font-bold mt-2">Prognóstico e Manejo</h3>
+                        <p class="text-gray-600 mt-1">Orienta as decisões sobre tratamento e manejo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fundamentals" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Os Pilares da Função Motora</h2>
+                    <p class="text-gray-700 mb-6">Compreender a diferença entre Neurônio Motor Superior (NMS) e Inferior (NMI) é a chave para interpretar os sinais de paralisia em ruminantes.</p>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-[#00A3FF] pl-4">
+                            <h4 class="font-bold text-lg">Neurônio Motor Superior (NMS)</h4>
+                            <p><strong>Localização:</strong> Tronco encefálico (em ruminantes).</p>
+                            <p><strong>Função:</strong> Iniciar e regular o movimento (função inibitória).</p>
+                            <p><strong>Sinal de Lesão:</strong> Paralisia espástica (membros rígidos, reflexos exagerados).</p>
+                        </div>
+                        <div class="border-l-4 border-[#FF6B00] pl-4">
+                            <h4 class="font-bold text-lg">Neurônio Motor Inferior (NMI)</h4>
+                            <p><strong>Localização:</strong> Medula espinhal.</p>
+                            <p><strong>Função:</strong> Conectar o SNC aos músculos.</p>
+                            <p><strong>Sinal de Lesão:</strong> Paralisia flácida (membros moles, perda de tônus e reflexos, atrofia rápida).</p>
+                        </div>
+                    </div>
+                </div>
+                   <div class="bg-gray-800 text-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#FFC700] mb-4">Diferença Crucial em Ruminantes!</h3>
+                    <p class="text-gray-300 text-lg">Ao contrário de primatas, uma lesão no córtex cerebral de um bovino ou ovino <strong class="text-white">NÃO</strong> causa paralisia motora primária. Isso ocorre porque os principais centros de NMS estão localizados no <strong class="text-white">tronco encefálico</strong>, tornando a avaliação dos nervos cranianos e da postura ainda mais importante.</p>
+                </div>
+            </section>
+            
+            <section id="exam-flow">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">O Exame Neurológico: Passo a Passo</h2>
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="flowchart-step relative pb-12">
+                        <div class="flex items-start">
+                            <div class="z-10 flex-shrink-0 bg-[#00A3FF] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg">1</div>
+                            <div class="ml-6 bg-white p-6 rounded-2xl shadow-md w-full">
+                                <h4 class="font-bold text-xl">Anamnese e Observação</h4>
+                                <p class="text-gray-600 mt-2">Investigue o histórico (evolução, manejo, alimentação) e observe o estado mental e comportamento do animal à distância. Há sinais de depressão, agressividade ou andar compulsivo?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowchart-step relative pb-12">
+                        <div class="flex items-start">
+                            <div class="z-10 flex-shrink-0 bg-[#FFC700] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg">2</div>
+                            <div class="ml-6 bg-white p-6 rounded-2xl shadow-md w-full">
+                                <h4 class="font-bold text-xl">Postura e Marcha</h4>
+                                <p class="text-gray-600 mt-2">Avalie o animal em estação e em movimento. Procure por ataxia (incoordenação), fraqueza (paresia), base ampla de sustentação ou tremores.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="flowchart-step relative pb-12">
+                        <div class="flex items-start">
+                            <div class="z-10 flex-shrink-0 bg-[#FF6B00] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg">3</div>
+                            <div class="ml-6 bg-white p-6 rounded-2xl shadow-md w-full">
+                                <h4 class="font-bold text-xl">Nervos Cranianos</h4>
+                                <p class="text-gray-600 mt-2">Teste sistematicamente os 12 pares de nervos cranianos. Avalie visão, reflexo pupilar, simetria facial, deglutição e tônus da mandíbula. Déficits aqui apontam para lesões no tronco encefálico.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowchart-step relative pb-12">
+                        <div class="flex items-start">
+                            <div class="z-10 flex-shrink-0 bg-[#FF007A] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg">4</div>
+                            <div class="ml-6 bg-white p-6 rounded-2xl shadow-md w-full">
+                                <h4 class="font-bold text-xl">Reflexos Espinhais e Dor</h4>
+                                <p class="text-gray-600 mt-2">Teste os reflexos dos membros (patelar, flexor) e a sensibilidade à dor superficial e profunda. Isso ajuda a localizar a lesão na medula espinhal e avaliar a gravidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="case-study" class="bg-gray-800 text-white rounded-2xl shadow-2xl p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <span class="bg-[#FFC700] text-gray-900 font-bold py-1 px-3 rounded-full text-sm">RELATO DE CASO</span>
+                    <h2 class="text-4xl font-black mt-3">Nosso Paciente: Ovino, 2 anos, Santa Inês</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold text-[#00A3FF] mb-4">Apresentação do Caso</h3>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                            <li><strong>Animal:</strong> Ovino, 2 anos, fêmea, raça Santa Inês.</li>
+                            <li><strong>Propriedade:</strong> Fazenda Campo do Brito, semiárido do Rio Grande do Norte. Seca severa há 4 meses, pastagens degradadas.</li>
+                            <li><strong>Histórico:</strong> Sinais iniciaram há 10 dias (tremores leves, relutância em mover), agravados nos últimos 3 dias (tremores evidentes, dificuldade para levantar, quedas).</li>
+                            <li><strong>Animais Afetados:</strong> Dois ovinos adultos e um cordeiro de 3 meses (confinado, mamando na mãe).</li>
+                            <li><strong>Cordeiro:</strong> Letargia intermitente, dificuldade sutil na coordenação da cabeça ao mamar.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold text-[#FF6B00] mb-4">Exame Neurológico Detalhado</h3>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                            <li><strong>Estado Mental:</strong> Alerta, mas com depressão moderada. Bocejos frequentes.</li>
+                            <li><strong>Postura:</strong> Base de sustentação ampla e instável. Tremores musculares (cabeça, pescoço, membros). Opistótono intermitente (intensifica com estímulo/movimento).</li>
+                            <li><strong>Marcha:</strong> Ataxia cerebelar severa, hipermetria acentuada (membros pélvicos), dificuldade em linha reta, tendência a desviar e cair. Tremores de intenção.</li>
+                            <li><strong>Reações Posturais:</strong> Resposta lenta e imprecisa ao reposicionamento de cascos. Perda de equilíbrio ao ser empurrado. Incapacidade de corrigir postura em decúbito lateral.</li>
+                            <li><strong>Nervos Cranianos:</strong> Reflexo pupilar normal. Nistagmo horizontal e rotatório intermitente (intensifica com movimento da cabeça/olhos). Tônus da mandíbula, mastigação, reflexo palpebral e sensibilidade facial normais. Leve inclinação da cabeça intermitente. Deglutição, voz, volume muscular do pescoço e língua normais.</li>
+                            <li><strong>Medula Espinhal e Reflexos:</strong> Sem paralisia flácida/espástica. Tônus muscular normal/levemente aumentado. Reflexos patelar, flexor, panículo, tônus anal e cauda normais. Nocicepção presente e apropriada.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gray-900 p-6 rounded-xl text-center">
+                    <h3 class="text-2xl font-bold text-[#00C4B4] mb-4">Conclusão da Localização da Lesão</h3>
+                    <p class="text-gray-300 text-lg">A combinação de tremores generalizados e de intenção, ataxia cerebelar severa, hipermetria acentuada, base ampla de sustentação, nistagmo e opistótono intermitente aponta fortemente para uma lesão primária no <strong class="text-white">CEREBELO</strong>. A preservação da propriocepção consciente e a normalidade dos reflexos espinhais apoiam esta localização, descartando envolvimento significativo da medula espinhal ou nervos periféricos. A ausência de sinais cerebrais primários extensos ajuda a excluir lesões cerebrais difusas.</p>
+                </div>
+
+                <div class="text-center mt-12 mb-8">
+                    <span class="bg-[#FFC700] text-gray-900 font-bold py-1 px-3 rounded-full text-sm">CAUSA PROVÁVEL</span>
+                    <h2 class="text-4xl font-black mt-3">Intoxicação por <i>Ipomoea asarifolia</i> ("Salsa")</h2>
+                    <div class="max-w-3xl mx-auto text-gray-300 mt-2 text-left">
+                        <p class="mb-2">A "salsa" é uma planta tóxica comum no semiárido, especialmente perigosa durante a seca. Seus sinais são consistentes com o caso e a toxicidade é explicada por:</p>
+                        <h4 class="font-bold text-lg text-white mt-4 mb-2">Toxina da <i>Ipomoea asarifolia</i></h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Toxina específica ainda desconhecida.</li>
+                            <li>Sintomas semelhantes à <i>Ipomoea carnea subsp. fistulosa</i>, que contém swainsonina.</li>
+                            <li>Causa provável da síndrome tremorgênica: Fitotoxinas ou micotoxinas.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg text-white mt-4 mb-2">Mecanismo de Ação (Swainsonina)</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Inibe $\alpha$-manosidase (lisossomos) $\rightarrow$ Acúmulo de oligossacarídeos.</li>
+                            <li>Inibe $\alpha$-manosidase II (aparelho de Golgi) $\rightarrow$ Disfunção no metabolismo de açúcares complexos.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg text-white mt-4 mb-2">Lesões Esperadas</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Sistema nervoso:</strong> Vacuolização no pericário dos neurônios, gliose e degeneração axonal.</li>
+                            <li><strong>Órgãos:</strong> Vacuolização citoplasmática em:
+                                <ul class="list-disc list-inside ml-5 space-y-1">
+                                    <li>Tireoide</li>
+                                    <li>Rim</li>
+                                    <li>Fígado</li>
+                                    <li>Pâncreas</li>
+                                    <li>Macrófagos</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold text-[#00A3FF] mb-4">Sinais Clínicos da Intoxicação</h3>
+                        <p class="text-gray-300 mb-4">A intoxicação por "salsa" causa uma síndrome tremorgênica com sinais cerebelares clássicos. A intensidade varia entre as espécies.</p>
+                        <div class="chart-container">
+                            <canvas id="clinicalSignsChart"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 text-center">Prevalência relativa dos principais sinais por espécie.</p>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold text-[#FF6B00] mb-4">Diagnóstico Diferencial</h3>
+                        <p class="text-gray-300 mb-4">Os sinais podem ser confundidos com outras doenças. A comparação de características-chave é essencial.</p>
+                        <div class="chart-container">
+                            <canvas id="differentialDiagnosisChart"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 text-center">Comparação de sinais-chave (escore de 1 a 10).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="management">
+                   <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Prognóstico e Plano de Ação</h2>
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                       <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                           <h3 class="text-2xl font-bold text-[#00A3FF] mb-4">Prognóstico: Favorável</h3>
+                           <p class="text-gray-700">O prognóstico é geralmente bom se a ingestão da planta for interrompida a tempo. A maioria dos animais se recupera em poucos dias. Casos de ingestão contínua ou em altas doses podem ser fatais.</p>
+                       </div>
+                       <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                           <h3 class="text-2xl font-bold text-[#FF6B00] mb-4">Manejo e Tratamento</h3>
+                           <p class="text-gray-700 mb-4">Não existe antídoto. O foco é na remoção da causa e no suporte ao animal.</p>
+                           <ul class="space-y-2">
+                                <li class="flex items-center"><span class="bg-orange-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-3 font-bold">1</span>Remover imediatamente os animais da pastagem contaminada.</li>
+                                <li class="flex items-center"><span class="bg-orange-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-3 font-bold">2</span>Fornecer forragem de boa qualidade e água limpa.</li>
+                                <li class="flex items-center"><span class="bg-orange-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-3 font-bold">3</span>Tratamento de suporte: fluidoterapia, anti-inflamatórios.</li>
+                                <li class="flex items-center"><span class="bg-orange-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-3 font-bold">4</span>Prevenção: erradicar a planta ou vedar áreas infestadas na seca.</li>
+                           </ul>
+                       </div>
+                   </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 border-t pt-8 border-gray-300">
+            <p class="text-gray-600">Este infográfico resume a abordagem ao exame neurológico em ruminantes, ilustrando a importância da metodologia sistemática e do conhecimento epidemiológico.</p>
+            <p class="text-sm text-gray-500 mt-2">Baseado no material de "Avaliação Clínica Neurológica em Ruminantes: Intoxicação por Ipomoea asarifolia".</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Função para quebrar o texto em várias linhas para melhor exibição em gráficos
+        function wrapText(text, maxLength) {
+            if (typeof text !== 'string') return text;
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Callback para formatar o título da tooltip dos gráficos
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        // Opções comuns para ambos os gráficos
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#F3F4F6' // Cor do texto da legenda para contraste no fundo escuro
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+        };
+
+        // Configuração e renderização do gráfico de barras para Sinais Clínicos
+        const clinicalSignsCtx = document.getElementById('clinicalSignsChart').getContext('2d');
+        new Chart(clinicalSignsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Ovinos', 'Caprinos', 'Bovinos'],
+                datasets: [{
+                    label: 'Tremores de Intenção',
+                    data: [90, 85, 80],
+                    backgroundColor: '#00A3FF',
+                }, {
+                    label: 'Ataxia/Incoordenação',
+                    data: [85, 95, 80],
+                    backgroundColor: '#FFC700',
+                }, {
+                    label: 'Hipermetria',
+                    data: [50, 80, 50],
+                    backgroundColor: '#FF6B00',
+                },{
+                    label: 'Nistagmo',
+                    data: [30, 70, 20],
+                    backgroundColor: '#FF007A',
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }, // Cor da grade Y
+                        ticks: { color: '#D1D5DB' } // Cor dos rótulos do eixo Y
+                    },
+                    x: {
+                        grid: { display: false }, // Oculta a grade X
+                        ticks: { color: '#D1D5DB' } // Cor dos rótulos do eixo X
+                    }
+                }
+            }
+        });
+
+        // Configuração e renderização do gráfico de radar para Diagnóstico Diferencial
+        const differentialDiagnosisCtx = document.getElementById('differentialDiagnosisChart').getContext('2d');
+        new Chart(differentialDiagnosisCtx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapText('Tremores de Intenção', 16),
+                    wrapText('Paralisia Flácida', 16),
+                    wrapText('Sinais Unilaterais (NC)', 16),
+                    wrapText('Cegueira Central', 16),
+                    wrapText('Andar em Círculos', 16)
+                ],
+                datasets: [{
+                    label: 'I. asarifolia',
+                    data: [9, 2, 1, 1, 2],
+                    backgroundColor: 'rgba(0, 163, 255, 0.2)',
+                    borderColor: '#00A3FF',
+                    pointBackgroundColor: '#00A3FF'
+                }, {
+                    label: 'PEM',
+                    data: [4, 2, 2, 9, 7],
+                    backgroundColor: 'rgba(255, 199, 0, 0.2)',
+                    borderColor: '#FFC700',
+                    pointBackgroundColor: '#FFC700'
+                },{
+                    label: 'Listeriose',
+                    data: [2, 1, 9, 2, 9],
+                    backgroundColor: 'rgba(255, 107, 0, 0.2)',
+                    borderColor: '#FF6B00',
+                    pointBackgroundColor: '#FF6B00'
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' }, // Cor das linhas angulares do radar
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' }, // Cor da grade do radar
+                        pointLabels: { color: '#F3F4F6', font: { size: 10 } }, // Cor e tamanho dos rótulos dos pontos
+                        ticks: {
+                            color: '#1F2937', // Cor do texto dos ticks
+                            backdropColor: 'rgba(243, 244, 246, 0.8)', // Cor de fundo dos ticks para melhor leitura
+                            stepSize: 2 // Incremento dos ticks
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
